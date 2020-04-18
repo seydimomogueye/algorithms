@@ -5,9 +5,15 @@ from collections import deque
 
 def subarrays_with_product_less_than_target(A, target):
     """
+    Problem:
+    --
+
     Given a Aay with positive numbers and a target number, find all it contiguous subAays whose
     product is less than the target number.
-    Learned:
+    
+    Tips:
+    --
+    1. Using queue.
     """
 
     result = []
@@ -36,6 +42,7 @@ def dutch_flag_sort(A):
 
     Tips:
     --
+    1. Pointers can be use as delimitation in order to put infront or in the back, depending the value with handle and result we want.
     """
     low, high = 0, len(A) - 1
     i = 0
@@ -79,21 +86,6 @@ def quadruple_sum_to_target(A, target):
     return quadruplets
 
 
-def get_next_valid_index(s, index):
-    backspace_count = 0
-
-    while index >= 0:
-        if s[index] == "#":
-            backspace_count += 1
-        elif backspace_count > 0:
-            backspace_count -= 1
-        else:
-            break
-        
-        index -= 1
-    
-    return index
-
 
 def comparing_strings_containing_backspace(string_1, string_2):
     """
@@ -104,6 +96,21 @@ def comparing_strings_containing_backspace(string_1, string_2):
     Tips:
     --
     """
+
+    def get_next_valid_index(s, index):
+        backspace_count = 0
+
+        while index >= 0:
+            if s[index] == "#":
+                backspace_count += 1
+            elif backspace_count > 0:
+                backspace_count -= 1
+            else:
+                break
+            
+            index -= 1
+        
+        return index
 
     ptr_s1 = len(string_1) - 1
     ptr_s2 = len(string_2) - 1
@@ -130,7 +137,13 @@ def comparing_strings_containing_backspace(string_1, string_2):
 def minimum_window_sort(A):
     """
     Problem:
-    Learned:
+    --
+    Given an array, find the length of the smallest subarray in it which when sorted will sort the whole array.
+
+    Tips:
+    --
+    1. See that a problem involve 2 pointers don't always mean that pointers are use together in a while.
+       It can be decomposed.
     """
 
     low = 0
