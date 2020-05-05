@@ -6,61 +6,44 @@ Mastering Cyclic sort Algorithms.
 """
 
 def cyclic_sort(nums):
-    i, n = 0, len(nums)
-    while i < n:
-        j = nums[i] - 1
-        if nums[i] != nums[j]:
-            nums[i], nums[j] = nums[j], nums[i]
-        else:
-            i +=1
-    return nums
-
+    pass
 
 
 def find_the_missing_number(A):
-    A_size, i = len(A), 0
-
-    while i < A_size:
-        j = A[i]
-        if A[j] != A[i]:
-            A[j], A[i] = A[j], A[i]
-        else:
-            i += 1
-    
-    for i in range(A_size):
-        if A[i] == i:
-            continue
-        return i
-
-    return -1
-
+    pass
 
 
 def find_all_missing_numbers(A):
-    missing_numbers = []
-    size = len(A)
-    i = 0
-
-    while(i < size):
-        j = A[i] - 1
-
-        if j < len(A) and A[i] != A[j]:
-            A[i], A[j] = A[j], A[i]
-        else:
-            i += 1
-
-    for i in range(1, size):
-        if i == A[i]:
-            continue
-        missing_numbers.append(i)
-
-    return missing_numbers
+    pass
 
 
 def find_duplicate(A):
     pass
 
 
-
 def find_all_duplicate_numbers(A):
+    pass
+
+
+def find_corrupt_numbers(A):
+    """
+    We are given an unsorted array containing ‘n’ numbers taken from the range 1 to ‘n’. 
+    The array originally contained all the numbers from 1 to ‘n’,
+    but due to a data error, one of the numbers got duplicated which also resulted in one number going missing. 
+    Find both these numbers.
+    """
+    pass
+
+
+def find_first_missing_positive_number(A):
+    """
+    Given an unsorted array containing numbers, find the smallest missing positive number in it.
+    """
+    pass
+
+
+def find_first_k_missing_positive_numbers(A):
+    """
+    Given an unsorted array containing numbers and a number ‘k’, find the first ‘k’ missing positive numbers in the array.
+    """
     pass
